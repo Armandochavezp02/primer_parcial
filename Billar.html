@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th{
+            border: 1.5px solid black;
+            border-collapse: collapse;
+            background-color: #E9F7EF;
+        }
+        
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+            background-image: url(https://i.pinimg.com/originals/fd/a2/e2/fda2e241d42f4989b201f0e638131b00.jpg);
+            background-position: bottom;
+        }
+
+        h2{
+            text-align: center;
+            color: white;
+        }
+    </style>
+
+<!-- Script mesa 1 -->
+    <script>
+        // Funcion que pone un 0 delante de un valor si es necesario
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  
+            return i;
+            }
+
+        //Funcion para indicar la hora de inicio
+            function mueveReloj(){
+            momentoActual = new Date()
+            hora = momentoActual.getHours()
+            minuto = momentoActual.getMinutes()
+            segundo = momentoActual.getSeconds()
+            minuto = checkTime(minuto);
+
+            document.getElementById('tempInicial').innerHTML =
+            hora + " : " + minuto;
+            } 
+
+        //Funcion para indicar la hora de finalización
+            function mueveRelojFinal(){
+            momentoActual = new Date()
+            hora = momentoActual.getHours()
+            minuto = momentoActual.getMinutes()
+            segundo = momentoActual.getSeconds()
+            minuto = checkTime(minuto);    
+
+            document.getElementById('tempFinal').innerHTML =
+            hora + " : " + minuto;  
+            } 
+
+        //Funcion del cronometro
+            var inicio=0;
+            var timeout=0;
+            //Funcion que empieza y detiene el cronometro
+            function empezarDetener(elemento)
+            {
+                if(timeout==0)
+                    {
+                        inicio=vuelta=new Date().getTime();
+                        // iniciamos el proceso
+                        funcionando();
+                    }else
+                {
+                // detemer el cronometro
+                clearTimeout(timeout);
+                timeout=0;
+                }
+            }
+    
+            function funcionando()
+            {
+                // obteneos la fecha actual
+                var actual = new Date().getTime();
+                // obtenemos la diferencia entre la fecha actual y la de inicio
+                var diff=new Date(actual-inicio);
+                // Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+                timeout=setTimeout("funcionando()",1000);
+                //Tiempo del conometro X Dinero
+                var minActual = checkTime(diff.getUTCMinutes());
+                var precioXmin = 0.833333333;
+                var precioTotal = minActual * precioXmin;
+                var precioTotaln = precioTotal.toFixed(2);
+                document.getElementById("money").innerHTML = precioTotaln;    
+            }
+    </script>
+
+<!-- Script mesa 2 -->
+    <script>
+
+        //Funcion para indicar la hora de inicio
+            function mueveReloj2(){
+            momentoActual2 = new Date()
+            hora2 = momentoActual2.getHours()
+            minuto2 = momentoActual2.getMinutes()
+            segundo2 = momentoActual2.getSeconds()
+            minuto2 = checkTime(minuto2);
+
+            document.getElementById('tempInicial2').innerHTML =
+            hora2 + " : " + minuto2;
+            } 
+
+        //Funcion para indicar la hora de finalización
+            function mueveRelojFinal2(){
+            momentoActual2 = new Date()
+            hora2 = momentoActual2.getHours()
+            minuto2 = momentoActual2.getMinutes()
+            segundo2 = momentoActual2.getSeconds()
+            minuto2 = checkTime(minuto2);    
+
+            document.getElementById('tempFinal2').innerHTML =
+            hora2 + " : " + minuto2;  
+            } 
+
+        //Funcion del cronometro
+            var inicio2=0;
+            var timeout2=0;
+            //Funcion que empieza y detiene el cronometro
+            function empezarDetener2(elemento2)
+            {
+                if(timeout2==0)
+                    {                      
+                        inicio2=vuelta=new Date().getTime();
+                        // iniciamos el proceso
+                        funcionando2();
+                    }else
+                {
+                // detemer el cronometro
+                clearTimeout(timeout2);
+                timeout2=0;
+                }
+            }
+    
+            function funcionando2()
+            {
+                // obteneos la fecha actual
+                var actual2 = new Date().getTime();
+                // obtenemos la diferencia entre la fecha actual y la de inicio
+                var diff2=new Date(actual2-inicio2);
+                // Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+                timeout2=setTimeout("funcionando2()",1000);
+                //Tiempo del conometro X Dinero
+                var minActual2 = checkTime(diff2.getUTCMinutes());
+                var precioXmin2 = 0.833333333;
+                var precioTotal2 = minActual2 * precioXmin2;
+                var precioTotal2n = precioTotal2.toFixed(2);
+                document.getElementById("money2").innerHTML = precioTotal2n;    
+            }
+    </script>
+
+<!-- Script mesa 3 -->
+<script>
+
+    //Funcion para indicar la hora de inicio
+        function mueveReloj3(){
+        momentoActual3 = new Date()
+        hora3 = momentoActual3.getHours()
+        minuto3 = momentoActual3.getMinutes()
+        segundo3 = momentoActual3.getSeconds()
+        minuto3 = checkTime(minuto3);
+
+        document.getElementById('tempInicial3').innerHTML =
+        hora3 + " : " + minuto3;
+        } 
+
+    //Funcion para indicar la hora de finalización
+        function mueveRelojFinal3(){
+        momentoActual3 = new Date()
+        hora3 = momentoActual3.getHours()
+        minuto3 = momentoActual3.getMinutes()
+        segundo3 = momentoActual3.getSeconds()
+        minuto3 = checkTime(minuto3);    
+
+        document.getElementById('tempFinal3').innerHTML =
+        hora3 + " : " + minuto3;  
+        } 
+
+    //Funcion del cronometro
+        var inicio3=0;
+        var timeout3=0;
+        //Funcion que empieza y detiene el cronometro
+        function empezarDetener3(elemento3)
+        {
+            if(timeout3==0)
+                {                      
+                    inicio3=vuelta=new Date().getTime();
+                    // iniciamos el proceso
+                    funcionando3();
+                }else
+            {
+            // detemer el cronometro
+            clearTimeout(timeout3);
+            timeout3=0;
+            }
+        }
+
+        function funcionando3()
+        {
+            // obteneos la fecha actual
+            var actual3 = new Date().getTime();
+            // obtenemos la diferencia entre la fecha actual y la de inicio
+            var diff3=new Date(actual3-inicio3);
+            // Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+            timeout3=setTimeout("funcionando3()",1000);
+            //Tiempo del conometro X Dinero
+            var minActual3 = checkTime(diff3.getUTCMinutes());
+            var precioXmin3 = 0.833333333;
+            var precioTotal3 = minActual3 * precioXmin3;
+            var precioTotal3n = precioTotal3.toFixed(2);
+            document.getElementById("money3").innerHTML = precioTotal3n;    
+        }
+        
+</script>
+
+<!-- Script mesa 4 -->
+<script>
+
+    //Funcion para indicar la hora de inicio
+        function mueveReloj4(){
+        momentoActual4 = new Date()
+        hora4 = momentoActual4.getHours()
+        minuto4 = momentoActual4.getMinutes()
+        segundo4 = momentoActual4.getSeconds()
+        minuto4 = checkTime(minuto4);
+
+        document.getElementById('tempInicial4').innerHTML =
+        hora4 + " : " + minuto4;
+        } 
+
+    //Funcion para indicar la hora de finalización
+        function mueveRelojFinal4(){
+        momentoActual4 = new Date()
+        hora4 = momentoActual4.getHours()
+        minuto4 = momentoActual4.getMinutes()
+        segundo4 = momentoActual4.getSeconds()
+        minuto4 = checkTime(minuto4);    
+
+        document.getElementById('tempFinal4').innerHTML =
+        hora4 + " : " + minuto4;  
+        } 
+
+    //Funcion del cronometro
+        var inicio4=0;
+        var timeout4=0;
+        //Funcion que empieza y detiene el cronometro
+        function empezarDetener4(elemento4)
+        {
+            if(timeout4==0)
+                {                      
+                    inicio4=vuelta=new Date().getTime();
+                    // iniciamos el proceso
+                    funcionando4();
+                }else
+            {
+            // detemer el cronometro
+            clearTimeout(timeout4);
+            timeout4=0;
+            }
+        }
+
+        function funcionando4()
+        {
+            // obteneos la fecha actual
+            var actual4 = new Date().getTime();
+            // obtenemos la diferencia entre la fecha actual y la de inicio
+            var diff4=new Date(actual4-inicio4);
+            // Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+            timeout4=setTimeout("funcionando4()",1000);
+            //Tiempo del conometro X Dinero
+            var minActual4 = checkTime(diff4.getUTCMinutes());
+            var precioXmin4 = 0.833333333;
+            var precioTotal4 = minActual4 * precioXmin4;
+            var precioTotal4n = precioTotal4.toFixed(2);
+            document.getElementById("money4").innerHTML = precioTotal4n;    
+        }
+</script>
+
+<!-- Script mesa 5 -->
+<script>
+
+    //Funcion para indicar la hora de inicio
+        function mueveReloj5(){
+        momentoActual5 = new Date()
+        hora5 = momentoActual5.getHours()
+        minuto5 = momentoActual5.getMinutes()
+        segundo5 = momentoActual5.getSeconds()
+        minuto5 = checkTime(minuto5);
+
+        document.getElementById('tempInicial5').innerHTML =
+        hora5 + " : " + minuto5;
+        } 
+
+    //Funcion para indicar la hora de finalización
+        function mueveRelojFinal5(){
+        momentoActual5 = new Date()
+        hora5 = momentoActual5.getHours()
+        minuto5 = momentoActual5.getMinutes()
+        segundo5 = momentoActual5.getSeconds()
+        minuto5 = checkTime(minuto5);    
+
+        document.getElementById('tempFinal5').innerHTML =
+        hora5 + " : " + minuto5;  
+        } 
+
+    //Funcion del cronometro
+        var inicio5=0;
+        var timeout5=0;
+        //Funcion que empieza y detiene el cronometro
+        function empezarDetener5(elemento5)
+        {
+            if(timeout5==0)
+                {                      
+                    inicio5=vuelta=new Date().getTime();
+                    // iniciamos el proceso
+                    funcionando5();
+                }else
+            {
+            // detemer el cronometro
+            clearTimeout(timeout5);
+            timeout5=0;
+            }
+        }
+
+        function funcionando5()
+        {
+
+            var actual5 = new Date().getTime();
+            var diff5=new Date(actual5-inicio5);
+            timeout5=setTimeout("funcionando5()",1000);
+            var minActual5 = checkTime(diff5.getUTCMinutes());
+            var precioXmin5 = 0.833333333;
+            var precioTotal5 = minActual5 * precioXmin5;
+            var precioTotal5n = precioTotal5.toFixed(2);
+            document.getElementById("money5").innerHTML = precioTotal5n;    
+        }
+</script>
+
+<!-- Script mesa 6 -->
+<script>
+
+    //Funcion para indicar la hora de inicio
+        function mueveReloj6(){
+        momentoActual6 = new Date()
+        hora6 = momentoActual6.getHours()
+        minuto6 = momentoActual6.getMinutes()
+        segundo6 = momentoActual6.getSeconds()
+        minuto6 = checkTime(minuto6);
+
+        document.getElementById('tempInicial6').innerHTML =
+        hora6 + " : " + minuto6;
+        } 
+
+    //Funcion para indicar la hora de finalización
+        function mueveRelojFinal6(){
+        momentoActual6 = new Date()
+        hora6 = momentoActual6.getHours()
+        minuto6 = momentoActual6.getMinutes()
+        segundo6 = momentoActual6.getSeconds()
+        minuto6 = checkTime(minuto6);    
+
+        document.getElementById('tempFinal6').innerHTML =
+        hora6 + " : " + minuto6;  
+        } 
+
+    //Funcion del cronometro
+        var inicio6=0;
+        var timeout6=0;
+        //Funcion que empieza y detiene el cronometro
+        function empezarDetener6(elemento6)
+        {
+            if(timeout6==0)
+                {                      
+                    inicio6=vuelta=new Date().getTime();
+                    // iniciamos el proceso
+                    funcionando6();
+                }else
+            {
+            // detemer el cronometro
+            clearTimeout(timeout6);
+            timeout6=0;
+            }
+        }
+
+        function funcionando6()
+        {
+            // obteneos la fecha actual
+            var actual6 = new Date().getTime();
+            // obtenemos la diferencia entre la fecha actual y la de inicio
+            var diff6=new Date(actual6-inicio6);
+            // Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+            timeout6=setTimeout("funcionando6()",1000);
+            //Tiempo del conometro X Dinero
+            var minActual6 = checkTime(diff6.getUTCMinutes());
+            var precioXmin6 = 0.833333333;
+            var precioTotal6 = minActual6 * precioXmin6;
+            var precioTotal6n = precioTotal6.toFixed(2);
+            document.getElementById("money6").innerHTML = precioTotal6n;    
+        }
+</script>
+
+</head>
+
+<body>
+    <h2>El costo total se calcula por minuto</h2>
+    
+                                                <!-- Mesas 1 y 2 -->
+    <table style="width:50%" class="center" >
+<!-- Nombre de las mesas -->
+        <tr>
+            <th> Mesa #1 </th>
+            <th>Mesa #2</th>
+        </tr>
+<!-- Mesas de billar -->
+        <tr>
+            <th>  <!-- Mesa de billar 1 -->
+                <img src="mesaOFF.jpg" id="mesa"  onclick="cambiarimagen();" width="250" height="150"> <!--Id mesa y cambiarimagen() -->
+                <script>
+                    const cambiarimagen = () => { //cambiaimagen
+                        let mesa = document.getElementById("mesa"); //mesa dos veces
+                        if (mesa.src.match('mesaOFF')){ //mesa
+                            mesa.src = "mesaON.jpg"  //mesa
+                            mueveReloj();
+                            empezarDetener(this);
+                        } else {
+                            mesa.src = "mesaOFF.jpg" 
+                            mueveRelojFinal();
+                            empezarDetener(this)
+                        }
+                    }
+                    
+                </script>
+               
+            </th>
+            
+            <th>  <!-- Mesa de billar 2 -->
+                <img src="mesaOFF.jpg" id="mesa2"  onclick="cambiarimagen2();" width="250" height="150">
+                <script>
+                    const cambiarimagen2 = () => {
+                        let mesa2 = document.getElementById("mesa2");
+                        if (mesa2.src.match('mesaOFF')){
+                            mesa2.src = "mesaON.jpg" 
+                            mueveReloj2();
+                            empezarDetener2(this);
+                        } else {
+                            mesa2.src = "mesaOFF.jpg" 
+                            mueveRelojFinal2();
+                            empezarDetener2(this)
+                        }
+                    }
+                </script>
+            </th>
+        </tr>
+<!-- Datos de las mesas -->
+        <tr>
+            <td> Hora del inicio del juego: <span id="tempInicial"> </span></td> <!-- Mesa 1 -->
+            <td> Hora del inicio del juego: <span id="tempInicial2"> </span></td> <!-- Mesa 2 -->
+        </tr>
+        <tr>
+            <td> Hora de finalizacion del juego: <span id="tempFinal"> </span></td> <!-- Mesa 1 -->
+            <td> Hora de finalizacion del juego: <span id="tempFinal2"> </span></td> <!-- Mesa 2 -->
+        </tr>
+        <tr>
+            <td> Total a pagar:$ <span id="money"> </span></td> <!-- Mesa 1 -->
+            <td> Total a pagar:$ <span id="money2"> </span></td> <!-- Mesa 2 -->
+        </tr>
+
+    </table>
+    
+                                                    <!-- Mesas 3 y 4 -->
+    <table style="width:50%" class="center" >
+        <caption> </caption>
+<!-- Nombre de las mesas -->
+        <tr>
+            <th> Mesa #3 </th>
+            <th>Mesa #4</th>
+        </tr>
+<!-- Mesas de billar -->
+        <tr>
+            <th>  <!-- Mesa de billar 3 -->
+                <img src="mesaOFF.jpg" id="mesa3"  onclick="cambiarimagen3();" width="250" height="150"> 
+                <script>
+                    const cambiarimagen3 = () => { 
+                        let mesa3 = document.getElementById("mesa3"); 
+                        if (mesa3.src.match('mesaOFF')){ 
+                            mesa3.src = "mesaON.jpg"  
+                            mueveReloj3();
+                            empezarDetener3(this);
+                        } else {
+                            mesa3.src = "mesaOFF.jpg" 
+                            mueveRelojFinal3();
+                            empezarDetener3(this)
+                        }
+                    }
+                    
+                </script>
+                
+            </th>
+            
+            <th>  <!-- Mesa de billar 4 -->
+                <img src="mesaOFF.jpg" id="mesa4"  onclick="cambiarimagen4();" width="250" height="150">
+                <script>
+                    const cambiarimagen4 = () => {
+                        let mesa4 = document.getElementById("mesa4");
+                        if (mesa4.src.match('mesaOFF')){
+                            mesa4.src = "mesaON.jpg" 
+                            mueveReloj4();
+                            empezarDetener4(this);
+                        } else {
+                            mesa4.src = "mesaOFF.jpg" 
+                            mueveRelojFinal4();
+                            empezarDetener4(this)
+                        }
+                    }
+                </script>
+            </th>
+        </tr>
+<!-- Datos de las mesas -->
+        <tr>
+            <td> Hora del inicio del juego: <span id="tempInicial3"> </span></td> <!-- Mesa 3 -->
+            <td> Hora del inicio del juego: <span id="tempInicial4"> </span></td> <!-- Mesa 4 -->
+        </tr>
+        <tr>
+            <td> Hora de finalizacion del juego: <span id="tempFinal3"> </span></td> <!-- Mesa 3 -->
+            <td> Hora de finalizacion del juego: <span id="tempFinal4"> </span></td> <!-- Mesa 4 -->
+        </tr>
+        <tr>
+            <td> Total a pagar:$ <span id="money3"> </span></td> <!-- Mesa 3 -->
+            <td> Total a pagar:$ <span id="money4"> </span></td> <!-- Mesa 4 -->
+        </tr>
+
+    </table>
+
+
+                                                        <!-- Mesas 5 y 6 -->
+    <table style="width:50%" class="center" >
+        <caption> </caption>
+<!-- Nombre de las mesas -->
+        <tr>
+            <th> Mesa #5 </th>
+            <th>Mesa #6</th>
+        </tr>
+<!-- Mesas de billar -->
+        <tr>
+            <th>  <!-- Mesa de billar  -->
+                <img src="mesaOFF.jpg" id="mesa5"  onclick="cambiarimagen5();" width="250" height="150"> 
+                <script>
+                    const cambiarimagen5 = () => { 
+                        let mesa5 = document.getElementById("mesa5"); 
+                        if (mesa5.src.match('mesaOFF')){ 
+                            mesa5.src = "mesaON.jpg"  
+                            mueveReloj5();
+                            empezarDetener5(this);
+                        } else {
+                            mesa5.src = "mesaOFF.jpg" 
+                            mueveRelojFinal5();
+                            empezarDetener5(this)
+                        }
+                    }
+                    
+                </script>
+                
+            </th>
+            
+            <th>  <!-- Mesa de billar 6 -->
+                <img src="mesaOFF.jpg" id="mesa6"  onclick="cambiarimagen6();" width="250" height="150">
+                <script>
+                    const cambiarimagen6 = () => {
+                        let mesa6 = document.getElementById("mesa6");
+                        if (mesa6.src.match('mesaOFF')){
+                            mesa6.src = "mesaON.jpg" 
+                            mueveReloj6();
+                            empezarDetener6(this);
+                        } else {
+                            mesa6.src = "mesaOFF.jpg" 
+                            mueveRelojFinal6();
+                            empezarDetener6(this)
+                        }
+                    }
+                </script>
+            </th>
+        </tr>
+<!-- Datos de las mesas -->
+        <tr>
+            <td> Hora del inicio del juego: <span id="tempInicial5"> </span></td> <!-- Mesa 5 -->
+            <td> Hora del inicio del juego: <span id="tempInicial6"> </span></td> <!-- Mesa 6-->
+        </tr>
+        <tr>
+            <td> Hora de finalizacion del juego: <span id="tempFinal5"> </span></td> <!-- Mesa 5 -->
+            <td> Hora de finalizacion del juego: <span id="tempFinal6"> </span></td> <!-- Mesa 6-->
+        </tr>
+        <tr>
+            <td> Total a pagar:$ <span id="money5"> </span></td> <!-- Mesa 5 -->
+            <td> Total a pagar:$ <span id="money6"> </span></td> <!-- Mesa 6 -->
+        </tr>
+
+    </table>    
+    
+</body>
+
+</html>
